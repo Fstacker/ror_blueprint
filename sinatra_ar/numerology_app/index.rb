@@ -1,5 +1,6 @@
 require 'sinatra'
 
+
 # Take the user's entry from the form input and calculate the birth path number
 def get_birth_path_num(birthdate)
 	number = birthdate[0].to_i + birthdate[1].to_i + birthdate[2].to_i + birthdate[3].to_i + birthdate[4].to_i + birthdate[5].to_i + birthdate[6].to_i + birthdate[7].to_i

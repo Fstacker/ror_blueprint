@@ -5,7 +5,7 @@ require 'yaml'
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
-require "sinatra/activerecord"
+require 'sinatra/activerecord'
 
 require 'erb'
 
