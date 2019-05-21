@@ -1,25 +1,28 @@
+
 require 'sinatra'
 
+class Person < ActiveRecord::Base
 
 # Take the user's entry from the form input and calculate the birth path number
-def get_birth_path_num(birthdate)
-	number = birthdate[0].to_i + birthdate[1].to_i + birthdate[2].to_i + birthdate[3].to_i + birthdate[4].to_i + birthdate[5].to_i + birthdate[6].to_i + birthdate[7].to_i
+	def self.get_birth_path_num(birthdate)
+		number = birthdate[0].to_i + birthdate[1].to_i + birthdate[2].to_i + birthdate[3].to_i + birthdate[4].to_i + birthdate[5].to_i + birthdate[6].to_i + birthdate[7].to_i
 
-	number = number.to_s
-	number = number[0].to_i + number[1].to_i
-
-	if number > 9
 		number = number.to_s
-		
-		# Assign the return value to a variable
 		number = number[0].to_i + number[1].to_i
-	end
 
-	return number
+		if number > 9
+			number = number.to_s
+			
+			# Assign the return value to a variable
+			number = number[0].to_i + number[1].to_i
+		end
+
+		return number
+	end
 end
 
 # Create a method that returns a specific message that corresponds to the birth path number.
-def get_message(number)
+def self.get_message(number)
 	case number
 	when 1
 		@message = "One is the leader.  The number one indicates the ability to stand alone and is a strong vibration.  Ruled by the Sun."
@@ -51,7 +54,7 @@ end
 
 get '/message/:birth_path_num' do
 	birth_path_num = params[:birth_path_num].to_i
-	@message = get_message(birth_path_num)
+	@message = Person.get_message(birth_path_num)
 	erb :index
 end
 
@@ -62,20 +65,20 @@ end
 post '/' do 
 	birthdate = params[:birthdate].gsub("-","")
 	if valid_birthdate(birthdate)
-		birth_path_num = get_birth_path_num(birthdate)
+		birth_path_num = Person.get_birth_path_num(birthdate)
 		redirect "/message/#{birth_path_num}"
 	else
 		@error = "We do not recognize your DOB format.  Please try again."
 		erb :form
-		erb @errorcd
+		erb @error
 	end
 end
 
 #refactored get :birthdate and post :birthdate into a setup_index_view call
 def setup_index_view
 	birthdate = params[:birthdate]
-	birth_path_num = get_birth_path_num(birthdate)
-	@message = "Your numerology number is #{birth_path_num}.  " + get_message(birth_path_num)
+	birth_path_num = Person.get_birth_path_num(birthdate)
+	@message = "Your numerology number is #{birth_path_num}.  " + Person.get_message(birth_path_num)
 	erb :index
 end
 
