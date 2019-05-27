@@ -25,8 +25,7 @@ describe 'Our Numerology App' do
   end
 
   it "responds to a post to / with a redirect" do
-    # This test just checks that a post request is 
-    # accepted with a birthdate parameter
+    # This test just checks that a post request is accepted with a birthdate parameter
     post("/", { birthdate: '09031994' })
     expect(last_response.redirect?).to eq(true)
   end
