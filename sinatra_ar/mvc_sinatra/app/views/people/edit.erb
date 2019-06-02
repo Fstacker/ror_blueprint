@@ -1,0 +1,10 @@
+<form id="#{person.id}" action="<%= "/people/:id" %>" method="post">
+	<input name="_method" type="hidden" value="put" />
+	<label for="first_name">First Name:</label>
+	<input name="first_name" type="text" value="<%= @person.first_name %>" />
+	<label for="last_name">Last Name:</label>
+	<input name="last_name" type="text" value="<%= @person.last_name %>" />
+	<label for="birthdate">Birthdate:</label>
+	<input name="birthdate" type="text" value="<%= @person.birthdate %>" />
+	<input type="submit" />
+</form>
