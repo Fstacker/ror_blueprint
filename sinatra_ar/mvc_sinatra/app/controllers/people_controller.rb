@@ -6,7 +6,7 @@ get '/people' do
 	erb :"/people/index"
 end
 
-get 'people/new' do 
+get '/people/new' do 
 	@person = Person.new
 	erb :"/people/new"
 end
@@ -37,12 +37,19 @@ put '/people/:id' do
 	redirect "/people/#{@person.id}"
 end
 
-get 'people/:id' do 
+#method and route to delete a record
+delete '/people/:id' do 
+	person = Person.find(params[:id])
+	person.delete
+	redirect "/people"
+end
+
+get '/people/:id' do
 	@person = Person.find(params[:id])
 	birth_path_num = Person.get_birth_path_num(@person.birthdate.strftime("%m%d%Y"))
   	@message = Person.get_message(birth_path_num)
 	erb :"/people/show"
-end 
+end
 
 =begin
 #retrieve the birthpath number of the person from the Person class and convert the date to a readable string
