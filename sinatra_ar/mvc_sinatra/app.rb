@@ -22,4 +22,4 @@ Dir[APP_ROOT.join('app/models', '*.rb')].each do |model_file|
   autoload ActiveSupport::Inflector.camelize(filename), model_file
 end
 
-#helpers ApplicationHelper
+helpers ApplicationHelper
