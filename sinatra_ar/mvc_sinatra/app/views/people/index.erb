@@ -1,4 +1,6 @@
-<h1>People</h1>
+<div class="people-main">
+	<h1>People</h1>
+</div>
 <hr>
 <table>
 	<thead>
@@ -18,15 +20,15 @@
 					</a>
 				</td>
 
-				<td>
+				<td class="bday-element">
 					<%= "#{person.birthdate}" %>
 				</td>
 
-				<td>
+				<td class="edit-element">
 					<a href="<%= "/people/#{person.id}/edit" %>" >Edit</a>
 				</td>
 
-				<td>
+				<td class="delete-element">
 					<form action="<%= "/people/#{person.id}" %>" method="post">
 						<input type="hidden" name="_method" value="delete" />
 						<input type="submit" value="Delete" />

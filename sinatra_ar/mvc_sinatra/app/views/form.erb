@@ -1,11 +1,9 @@
-<!-- error message for DOB form entry using incorrect format -->
-<% if !@error.nil? %>
-	<p><%= @error %></p>
-<% end %>
+
+<h3>Find Out What Your Birthday Says About You</h3>
 
 <!-- user input form for DOB -->
 <form action= "/" method="post">
-	<label for="birthdate">Enter your birthdate</label>
-	<input class="form-control" name="birthdate" type="date" />
-	<input type="submit" />
+	<p><label for="birthdate">Enter your birthday:</label><br></p>
+	<input class="form-control" name="birthdate" type="date" /><br>
+	<input type="submit" /><br>
 </form> <!-- end user input form -->

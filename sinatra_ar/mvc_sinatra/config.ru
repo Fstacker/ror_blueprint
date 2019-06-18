@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra'
 require 'rake'
+require 'shotgun'
 
 require ::File.expand_path('../app',  __FILE__)
 

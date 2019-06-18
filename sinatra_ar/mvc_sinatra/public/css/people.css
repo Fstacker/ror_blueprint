@@ -1,0 +1,83 @@
+html {
+	font-size: 10px;
+	font-family: Roboto, sans-serif;
+	color: #2c3539;
+	display: block;
+	align-content: center;
+	width: 95%;
+	margin: 0;
+	background: url('../img/01_homepage.png');
+}
+
+body {
+	align-content: center;
+}
+
+p {
+	font: 400 1.2rem/1 "Montserrat", sans-serif;
+}
+
+input.form-control {
+	width: 50%;
+	background: #fff;
+}
+
+
+/* ----- M E D I A  Q U E R I E S -----------------------*/
+
+@media (max-width: 430px) {
+
+/* ----- M A I N page  ----------------------------- */
+	h1 {
+		font: 500 2.8rem/1.2 "Roboto", sans-serif;
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: .3rem;
+	}
+
+	h3 {
+		font-size: 1.6rem;
+		font-variant: small-caps;
+	}
+
+	input.form-control {
+
+	}
+	.bday-element {
+		padding-right: 5px;
+	}
+
+	.edit-element {
+		padding: 0 15px;
+	}
+
+	.h1-home {
+		width: 100%;
+
+	}
+	.new-person {
+
+	}
+
+	.edit-person {
+
+	}
+
+/* --- P E O P L E page -------- */
+
+	.people-main h1 {
+		font-size: 2rem;
+		font-variant: small-caps;
+	}
+}
+
+
+@media (max-width: 1000px)j{
+	.new-person {
+
+	}
+
+	.edit-person {
+
+	}
+}
