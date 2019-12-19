@@ -22,7 +22,7 @@ GEM
     minitest (5.11.3)
     mustermann (1.0.3)
     pg (1.1.4)
-    rack (2.0.6)
+    rack (2.0.8)
     rack-protection (2.0.5)
       rack
     rack-test (1.1.0)
@@ -61,7 +61,7 @@ DEPENDENCIES
   activerecord (~> 5.2, >= 5.2.2)
   faker (~> 1.4.3)
   pg (~> 1.1, >= 1.1.4)
-  rack (~> 2.0, >= 2.0.6)
+  rack (~> 2.0)
   rack-test (~> 1.1)
   rake (~> 12.3, >= 12.3.2)
   rspec (~> 3.8)
